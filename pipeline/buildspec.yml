@@ -12,5 +12,5 @@ phases:
 artifacts:
   files:
     - sam-app/template.yaml
-    - sam-app/samconfig_dev.toml
+    - sam-app/samconfig.toml
     - pipeline/deployspec.yml
