@@ -26,9 +26,10 @@ class Pipeline(core.Stack):
 		pipeline = aws_codepipeline.Pipeline(self, "Pipeline", pipeline_name='hello-world-pipeline')
 
 		# stage
-		source_stage = pipeline.add_stage(stage_name='Source')
-		build_stage  = pipeline.add_stage(stage_name='Build')
-		deploy_stage = pipeline.add_stage(stage_name='Deploy')
+		source_stage  = pipeline.add_stage(stage_name='Source')
+		approve_stage = pipeline.add_stage(stage_name='Approve')
+		build_stage   = pipeline.add_stage(stage_name='Build')
+		deploy_stage  = pipeline.add_stage(stage_name='Deploy')
 
 		# actions
 		source_ouput_artifact = aws_codepipeline.Artifact("SourceArtifact")
@@ -37,6 +38,10 @@ class Pipeline(core.Stack):
 			repository=aws_codecommit.Repository.from_repository_name(self, "Get Repo", "cdk-demo"),
 			branch="main",
 			output= source_ouput_artifact
+		))
+
+		approve_stage.add_action(aws_codepipeline_actions.ManualApprovalAction(
+			action_name="Approve"
 		))
 
 		build_output_artifact = aws_codepipeline.Artifact("BuildArtifact")
