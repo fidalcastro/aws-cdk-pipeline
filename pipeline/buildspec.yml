@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - sam build -t sam-app/template.yaml --debug
-      - sam package -t sam-app/template.yaml --s3_bucket aws-sam-cli-managed-default-samclisourcebucket-x7fg0grk3glj --s3_prefix hello-world-lambda --debug
+      - sam package -t sam-app/template.yaml --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-x7fg0grk3glj --s3-prefix hello-world-lambda --debug
 artifacts:
   files:
     - sam-app/template.yaml
