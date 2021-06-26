@@ -6,5 +6,5 @@ stack_name = "hello-world-lambda"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-x7fg0grk3glj"
 s3_prefix = "hello-world-lambda"
 region = "ap-south-1"
-confirm_changeset = true
+confirm_changeset = false
 capabilities = "CAPABILITY_IAM"
