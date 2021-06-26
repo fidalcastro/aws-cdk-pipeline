@@ -14,7 +14,8 @@ class Pipeline(core.Stack):
 		super().__init__(scope, id, **kwargs)
 		# CodeBuild Build Project
 		sam_build = aws_codebuild.PipelineProject(self, "Sam Build", 
-			build_spec=aws_codebuild.BuildSpec.from_source_filename("pipeline/buildspec.yml")
+			build_spec=aws_codebuild.BuildSpec.from_source_filename("pipeline/buildspec.yml"),
+			environment=aws_codebuild.BuildEnvironment(build_image=aws_codebuild.LinuxBuildImage.STANDARD_5_0)
 		)
 
 		sam_deploy = aws_codebuild.PipelineProject(self, "Sam Deploy",

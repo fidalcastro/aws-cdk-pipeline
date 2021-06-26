@@ -1,10 +1,6 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      python: 3.8
-
-  build:
+   build:
     commands:
       - sam deploy -t sam-app/template.yaml --config-file sam-app/samconfig.toml --debug
