@@ -1,6 +1,6 @@
 version: 0.2
 
 phases:
-   build:
+  build:
     commands:
-      - sam deploy -t sam-app/template.yaml --config-file sam-app/samconfig.toml --debug
+      - sam deploy --template-file sam-app/packaged-template.yaml --config-file sam-app/samconfig_dev.toml --debug
