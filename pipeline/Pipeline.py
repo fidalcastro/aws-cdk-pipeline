@@ -19,7 +19,8 @@ class Pipeline(core.Stack):
 		)
 
 		sam_deploy = aws_codebuild.PipelineProject(self, "Sam Deploy",
-			build_spec=aws_codebuild.BuildSpec.from_source_filename("pipeline/deployspec.yml")
+			build_spec=aws_codebuild.BuildSpec.from_source_filename("pipeline/deployspec.yml"),
+			environment=aws_codebuild.BuildEnvironment(build_image=aws_codebuild.LinuxBuildImage.STANDARD_5_0)
 		)
 
 		# Creating a pipeline
