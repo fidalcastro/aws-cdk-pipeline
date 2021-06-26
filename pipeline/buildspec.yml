@@ -7,9 +7,9 @@ phases:
 
   build:
     commands:
-      - sam build -s sam-app --debug
-      - sam package -s sam-app --debug
+      - sam build -t sam-app/template.yaml --debug
+      - sam build -t sam-app/template.yaml --config-file sam-app/samconfig.toml --debug
 artifacts:
   files:
-    - template.yaml
-    - samconfig_dev.toml
+    - sam-app/template.yaml
+    - sam-app/samconfig_dev.toml

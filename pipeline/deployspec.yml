@@ -1,4 +1,4 @@
-ersion: 0.2
+version: 0.2
 
 phases:
   install:
@@ -7,4 +7,4 @@ phases:
 
   build:
     commands:
-      - sam deploy -s sam-app --debug
+      - sam deploy -t sam-app/template.yaml --config-file sam-app/samconfig.toml --debug
