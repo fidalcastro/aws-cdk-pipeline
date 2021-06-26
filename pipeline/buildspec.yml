@@ -13,3 +13,4 @@ artifacts:
   files:
     - sam-app/template.yaml
     - sam-app/samconfig_dev.toml
+    - pipeline/deployspec.yml
