@@ -119,6 +119,7 @@ class Pipeline(core.Stack):
 			aws_iam.PolicyStatement(
 				sid='IAM',
 				actions=[
+					"iam:CreateRole",
 					"iam:AttachRolePolicy",
 					"iam:DeleteRole",
 					"iam:DetachRolePolicy",
